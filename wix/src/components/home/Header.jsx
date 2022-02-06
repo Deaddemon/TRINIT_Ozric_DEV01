@@ -9,7 +9,9 @@ const style = {
   maxWidth: 360,
   bgcolor: '#ffffff'
 };
-const useStyle= makeStyles({
+const useStyle= makeStyles( (theme) => {
+
+  return{
     root:{
         color:'#161622',
         display: 'flex',
@@ -28,7 +30,7 @@ const useStyle= makeStyles({
     },
     
     component1:{
-         marginLeft:0,
+         marginLeft:'5%',
          textAlign:'left',
          marginTop: '5%'
     },
@@ -63,15 +65,22 @@ const useStyle= makeStyles({
    component4:{
     backgroundColor:'#ffffff',
     fontFamily: 'Oxygen',
-    display: 'flex',
-    justifyContent:'left'
+      
+
+    width:'auto',
+    marginLeft: '25%',
+    marginRight: '25%'
     
    },
    image:{
        maxWidth: '100%',
-       height:'auto'
+       height:'auto',
+       [theme.breakpoints.down(1040)]:{
+         display:'none'
+       }
+
    }
-   
+   }
 })
 export default function ListDividers() {
     const classes = useStyle();
@@ -112,22 +121,23 @@ export default function ListDividers() {
           
           <Typography>ie varius au leifend ac at elit. In hac habitasse platea dictumst. Duis convallis quam ac fermentum aliquam. Vivamus placerat malesuada tellus, a tincidunt nisi pellentesque in. Phasellus placerat eros pretium sapien consequat, gravida fermentum dolor vehicula. Nullam facilisis imperdiet elit nec aliquam. Vivamus auctor faucibus risus ut viverra. Sed vitae nulla in ex placerat condimentum. Phasellus convallis, nunc eget malesuada semper, lectus quam pretium nunc, in lobortis velit velit in turpis. Quisque ac sem sit amet elit pharetra gravida ut sit amet or</Typography>
           </Box>
+
+        
+          <Box className={classes.component4}>
+          <Divider variant='middle'/>
+        <Typography> Made with wix</Typography>
+        <Divider variant='middle'/>
+
+          </Box>
+          
        </Box>
 
 
-       <Divider variant='middle'/>
+         
+
 
       
-       <Box className={classes.root2}>
-          <Box className={classes.component3}> 
-          <Typography variant='h3' style={{paddingBottom:'2%'}}>Lorem ipsum</Typography>
-           
-          
-          <Typography>ie varius au leifend ac at elit. In hac habitasse platea dictumst. Duis convallis quam ac fermentum aliquam. Vivamus placerat malesuada tellus, a tincidunt nisi pellentesque in. Phasellus placerat eros pretium sapien consequat, gravida fermentum dolor vehicula. Nullam facilisis imperdiet elit nec aliquam. Vivamus auctor faucibus risus ut viverra. Sed vitae nulla in ex placerat condimentum. Phasellus convallis, nunc eget malesuada semper, lectus quam pretium nunc, in lobortis velit velit in turpis. Quisque ac sem sit amet elit pharetra gravida ut sit amet or</Typography>
-          </Box>
-       </Box>
-
- 
+      
 
     
        

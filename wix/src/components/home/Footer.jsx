@@ -1,67 +1,135 @@
+
 import * as React from 'react';
 // import Divider from '@mui/material/Divider';
-import { Paper, Divider,makeStyles, styled , Grid , createTheme} from '@material-ui/core';
+import {   Container , Grid ,  Box , makeStyles} from '@material-ui/core';
 // import Stack from '@mui/material/Stack';
+import {Link} from 'react-router-dom'
  
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import InfoIcon from '@material-ui/icons/Info';
-import SecurityIcon from '@material-ui/icons/Security';
-import AcUnitIcon from '@material-ui/icons/AcUnit';
 
-const Item = styled(Paper)(({ theme }) => ({
-//   ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  margin: 'auto',
-  width: '100%',
-  color: '#161622',
-  backgroundColor:'rgba(22, 22, 34, 0.1)',
-  fontFamily: 'Oxygen'
-  
-}));
-const useStyle = makeStyles({
-    root:{
-        // position:'absolute',
-        bottom:0,
-        width:'100%',
-        /* Height of the footer */
-        
+ const useStyle = makeStyles({
+     
+      root:{
          
+        backgroundColor:'rgba(22, 22, 34, 0.5)',
+        
+        fontFamily:'Oxygen',
+         fontWeight:'600'
+      },
+      root2:{
+        textDecoration: 'none',
+        color: '#161622',
+        fontFamily:'Oxygen',
+        fontWeight:'590'
 
-
-    },
-    item1:{
-      display:'flex',
-      
-    }
+      }
     
+ })
+      
   
 
-});
-export default function DividerStack() {
-  const classes = useStyle();
+export default function Footer() {
+ const classes =  useStyle();
   return (
-    <div className = {classes.root}>
-      
-     <Grid container spacing={0} className={classes.root}>
-  <Grid item xs={8}>
-       
-    <Item  >
-        <Item className={classes.item1}> <InfoIcon />  About </Item>
-        <Item className={classes.item1}><SecurityIcon/>Terms of Use</Item>
-        <Item className={classes.item1}><AcUnitIcon/> Privacy Policy</Item></Item>
-  </Grid>
-  <Grid item xs={4}>
-        <Item>
-        <Item><FacebookIcon/></Item>
-        <Item><TwitterIcon/></Item>
-        <Item><InstagramIcon/></Item>
-        </Item>
-  </Grid>
-   
-</Grid>
-    </div>
+
+
+    <footer>
+      <Box 
+      px={{ xs:3 , sm:10}}
+      py= {{ xs:5 , sm:10}}
+      className = {classes.root}
+
+        >
+        <Container maxWidth ='lg'  >
+
+          <Grid container spacing={5}>
+            <Grid item xs={12} sm={4}>
+              <Box borderBottom={1} >
+               HELP
+              </Box>
+
+              <Box>
+              <Link className={classes.root2} to="/" color="inherit">
+                contact
+              </Link>
+              </Box>
+
+              <Box>
+              <Link className={classes.root2} to="/" color="inherit">
+               support
+              </Link>
+              </Box>
+
+              <Box>
+              <Link className={classes.root2} to="/" color="inherit">
+                Privacy
+              </Link>
+              </Box>
+
+               
+
+            </Grid>
+
+            <Grid item xs={12} sm={4}>
+              
+              <Box borderBottom={1} >
+               LOGIN
+              </Box>
+
+              <Box>
+              <Link className={classes.root2} to="/" color="inherit">
+                Register
+              </Link>
+              </Box>
+
+              <Box>
+              <Link className={classes.root2} to="/" color="inherit">
+               Messages
+              </Link>
+              </Box>
+
+              <Box>
+              <Link className={classes.root2}  to="/" color="inherit">
+                backup
+              </Link>
+              </Box>
+
+               
+
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              
+              <Box borderBottom={1} >
+               SUPPORT
+              </Box>
+
+              <Box>
+              <Link className={classes.root2} to="/" color="inherit">
+                Register
+              </Link>
+              </Box>
+
+              <Box>
+              <Link className={classes.root2} to="/" color="inherit">
+               Messages
+              </Link>
+              </Box>
+
+              <Box>
+              <Link className={classes.root2}  to="/" color="inherit">
+                backup
+              </Link>
+              </Box>
+
+               
+
+            </Grid>
+
+          </Grid>
+
+        </Container>
+      </Box>
+
+    </footer>
+  
   );
 }

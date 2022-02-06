@@ -20,7 +20,12 @@ export const TemplateProvider = ({children }) => {
                         paddingTop: 0
                     }
                 }
-            }
+            },
+            MuiGrid:{
+                Grid :{
+                    '&: first-child':{
+                        maxWidth: 'none'
+                    }}}
 
         }
 

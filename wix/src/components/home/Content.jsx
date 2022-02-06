@@ -1,32 +1,157 @@
+
+
 import * as React from 'react';
- 
-// import Box from '@mui/material/Box';
-// import Card from '@mui/material/Card';
-// import CardContent from '@mui/material/CardContent';
-import {  CardContent, Card,Box, Typography} from '@material-ui/core';
+import { styled , Grid , Paper , Box , makeStyles , Typography } from '@material-ui/core';
+import blocks from './blocks.png'
 
- 
+const Item = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
-export default function Content() {
-  
 
+ const useStyle = makeStyles( (theme)=>{
+     return{
+      
+      image:{
+
+      
+          width: '100%',
+          height: 'auto'
+
+         
+
+       
+      }
+    }
+ })
+export default function RowAndColumnSpacing() {
+  const classes =  useStyle();
   return (
-    
-    <Card sx={{ display: 'flex',justifyContent:'apace-around' }}>
-      <Box sx={{ display: 'flex', flexDirection: 'column', width:'50%' }}>
-        <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography component="div" variant="h5">
-            Live From Space
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div">
-          etra pharetra. Etiam auctor velit ac libero viverra rhoncus. Nunc efficitur tempor leo, sed pulvinar felis eleifend faucibus. Ut ante nibh, luctus nec est quis, rhoncus semper dui. Aenean dignissim pharetra nunc in rhoncus. Vestibulum vehicula, nisl sagittis tincidunt facilisis, magna tortor tincidunt odio, non rhoncus diam nunc non augue. Nam dui velit, ornare et egestas tincidunt, consequat aliquam velit. Ut sollicitudin, erat nec suscipit mattis, lacus justo lacinia dui, eget imperdiet tellus tellus in felis. Morbi mollis mauris erat. Mauris mollis lacus eget sapien pretium, eget elementum dui c
-          </Typography>
-        </CardContent>
-      
-      </Box>
-      
-    </Card>
+    <Box sx={{ width: '100%' }}>
+      <Grid container  Spacing={5}  >
+        <Grid item xs={6} sm={4}>
+          <Item>
+          <Box   >
+               
+                       <Typography variant='h3' style={{paddingBottom:'2%'}}>Design and Build</Typography>
+          </Box>
+          <Box>
+             <Typography>  nsectet rem faucibus. Integerimpnec leo eu facilisis. Nam eu interdum nulla. In a est at lacus pretium venenatis. Proin bibendummolestie varius. Maecenas sollicitudin metus vitae dui fermentum viverra.
  
- 
+  Sed a congue nisl. Maecenas non laoreet purus. Sed vnsectet rem faucibus. Integer imperdiet nec leo eu facilisis. Nam eu interdum nulla. In a est v               </Typography>
+             
+              </Box>
+          </Item>
+        </Grid>
+
+        <Grid item xs={6} sm={4}>
+          <Item>
+          <Box>
+           <img className={classes.image} src={blocks} alt='block' />
+           </Box>
+          </Item>
+        </Grid>
+        <Grid item xs={12}>
+          <Item>3</Item>
+        </Grid>
+        <Grid item xs={6}>
+          <Item>4</Item>
+        </Grid>
+        <Grid item xs={6}>
+          <Item>4</Item>
+        </Grid>
+      </Grid>
+    </Box>
   );
 }
+
+// import * as React from 'react';
+// // import Divider from '@mui/material/Divider';
+// import {   Container , Grid ,  Box , makeStyles ,Typography} from '@material-ui/core';
+// // import Stack from '@mui/material/Stack';
+// import {Link} from 'react-router-dom'
+// import blocks from './blocks.png'
+
+//  const useStyle = makeStyles( (theme)=>{
+//      return{
+//       root:{
+         
+//          backgroundColor:'white',
+//          fontFamily: 'Oxygen',
+        
+
+        
+         
+//       },
+//       root2:{
+//         textDecoration: 'none',
+//         color: '#161622',
+         
+
+//       },
+//       image:{
+
+//         [theme.breakpoints.down(1025)]:{
+//           width: '100%',
+//           height: 'auto'
+
+//         }
+
+       
+//       }
+//     }
+//  })
+      
+  
+
+// export default function Footer() {
+//  const classes =  useStyle();
+//   return (
+
+
+//     <footer>
+//       <Box 
+//       px={{ xs:2, sm:10}}
+//       py= {{ xs:5 , sm:10}}
+//       className = {classes.root}
+
+//         >
+//         <Container maxWidth ='lg'  >
+
+//           <Grid container spacing={6}>
+//             <Grid item xs={12} sm={4}>
+//               <Box   >
+               
+//               <Typography variant='h3' style={{paddingBottom:'2%'}}>Design and Build</Typography>
+//               </Box>
+
+//               <Box>
+//                 <Typography>  nsectet rem faucibus. Integerimpnec leo eu facilisis. Nam eu interdum nulla. In a est at lacus pretium venenatis. Proin bibendummolestie varius. Maecenas sollicitudin metus vitae dui fermentum viverra.
+ 
+//  Sed a congue nisl. Maecenas non laoreet purus. Sed vnsectet rem faucibus. Integer imperdiet nec leo eu facilisis. Nam eu interdum nulla. In a est v
+//                </Typography>
+             
+//               </Box>
+
+               
+
+//             </Grid>
+
+//             <Grid item xs={12} sm={4}>
+//               <Box>
+//                 <img className={classes.image} src={blocks} alt='block' />
+//               </Box>
+               
+//           </Grid>
+//           </Grid>
+
+//         </Container>
+//       </Box>
+
+//     </footer>
+  
+//   );
+// }
